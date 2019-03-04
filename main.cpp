@@ -5,7 +5,7 @@ using namespace std;
 
 Complex funcio2(Complex& c1)
 {
-	Complex c2 = c1.suma(c1);
+	Complex c1 = c1.suma(c1);
 	c2.mostra();
 	return c2;
 }
