@@ -1,19 +1,29 @@
+#include "complex.h"
 #include <iostream>
 
 using namespace std;
 
-#include "GrupConversa.h"
+Complex funcio2(Complex& c1)
+{
+	Complex c2 = c1.suma(c1);
+	c2.mostra();
+	return c2;
+}
 
-
-
+void funcio1(const Complex& c1)
+{
+	Complex c2;
+	c2.llegeix();
+	Complex c3 = c1.suma(c2);
+	c1 = funcio2(c1);
+	c1.mostra();
+}
 
 int main()
 {
-	Participant llistaParticipants[MAX_PARTICIPANTS] = 
-	{
-		{"P1", "T1"},{ "P2", "T2" },{ "P3", "T1" }
-	};
-    GrupConversa grup(llistaParticipants, MAX_PARTICIPANTS);
-  
-    return 0;
+	Complex a, b;
+
+	funcio1(a);
+	funcio2(b);
+	return 0;
 }
